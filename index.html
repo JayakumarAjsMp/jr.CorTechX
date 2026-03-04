@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="jr.CorTechX — Cortex Intelligence at the Core Technology. Expert IT solutions: Mobile Apps, Backend Systems, Web Development & more." />
+  <title>jr.CorTechX | Cortex Intelligence at the Core Technology</title>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ HEADER / NAV ═══════════════════════════════ -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="nav__logo" aria-label="jr.CorTechX Home">
+        <img src="logo.png" alt="jr.CorTechX Logo" class="nav__logo-img" width="44" height="44" />
+        <span class="nav__logo-text">jr.<span class="accent">CorTechX</span></span>
+      </a>
+
+      <ul class="nav__list" id="navList" role="list">
+        <li><a href="#home"     class="nav__link" aria-current="page">Home</a></li>
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#about"    class="nav__link">About</a></li>
+        <li>
+          <a href="mailto:jr.cortechx@gmail.com" class="nav__link nav__cta">
+            Contact Us
+          </a>
+        </li>
+      </ul>
+
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="navList">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══════════════════════════════ HERO / HOME ═══════════════════════════════ -->
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero__particles" aria-hidden="true">
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+        <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+      </div>
+
+      <div class="hero__content container">
+        <div class="hero__text">
+          <p class="hero__pre-tag" aria-hidden="true">&lt;innovation /&gt;</p>
+          <h1 class="hero__title" id="hero-heading">
+            <span class="hero__title-jr">jr.</span><span class="hero__title-cor">Cor</span><span class="hero__title-tech">Tech</span><span class="hero__title-x">X</span>
+          </h1>
+          <p class="hero__tagline">Cortex Intelligence at the Core Technology</p>
+          <p class="hero__desc">
+            We engineer next-generation digital solutions — from pixel-perfect web and mobile apps to scalable systems — built for the world stage.
+          </p>
+          <div class="hero__actions">
+            <a href="#services" class="btn btn--primary">Get Started</a>
+            <a href="#about"    class="btn btn--ghost">Our Story</a>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__glow-ring"></div>
+          <div class="hero__glow-ring hero__glow-ring--2"></div>
+          <div class="hero__glow-ring hero__glow-ring--3"></div>
+          <img src="logo.png" alt="" class="hero__logo-img" />
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint" aria-hidden="true">
+        <span>scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ SERVICES ═══════════════════════════════ -->
+    <section class="services" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">What We Build</span>
+          <h2 class="section-title" id="services-heading">Our <span class="accent">Services</span></h2>
+          <p class="section-sub">End-to-end digital craftsmanship — from concept to deployment and beyond.</p>
+        </div>
+
+        <div class="services__grid">
+
+          <article class="card" aria-label="Mobile App Development">
+            <div class="card__icon-wrap" aria-hidden="true">
+              <svg class="card__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="13" y="4" width="22" height="40" rx="4" stroke="currentColor" stroke-width="2.5"/>
+                <circle cx="24" cy="38" r="2" fill="currentColor"/>
+                <rect x="18" y="8" width="12" height="2" rx="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="card__body">
+              <span class="card__tag">Android · iOS</span>
+              <h3 class="card__title">Mobile Apps</h3>
+              <p class="card__desc">
+                iOS &amp; Android apps built with Cross-platform or Native, native performance, stunning UI. From MVP to production-grade applications.
+              </p>
+            </div>
+            <ul class="card__features" aria-label="Key features">
+              <li>iOS &amp; Android</li>
+              <li>Custom UI / Animations</li>
+              <li>API &amp; Library Integration</li>
+            </ul> 
+          </article>
+
+          <article class="card" aria-label="Backend Development">
+            <div class="card__icon-wrap" aria-hidden="true">
+              <svg class="card__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="4" y="10" width="40" height="10" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                <rect x="4" y="26" width="40" height="10" rx="3" stroke="currentColor" stroke-width="2.5"/>
+                <circle cx="10" cy="15" r="2" fill="#ff2244"/>
+                <circle cx="10" cy="31" r="2" fill="#ff2244"/>
+              </svg>
+            </div>
+            <div class="card__body">
+              <span class="card__tag">Scalable · Secure · Reliable</span>
+              <h3 class="card__title">Backend Systems</h3>
+              <p class="card__desc">
+                Robust, secure, and scalable server-side architectures powered by Kotlin and PostgreSQL. RESTful APIs, microservices, and data solutions.
+              </p>
+            </div>
+            <ul class="card__features" aria-label="Key features">
+              <li>RESTful &amp; GraphQL APIs</li>
+              <li>Secure Database Design</li>
+              <li>Microservices Architecture</li>
+            </ul>
+          </article>
+
+          <article class="card" aria-label="Website Development">
+            <div class="card__icon-wrap" aria-hidden="true">
+              <svg class="card__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="4" y="8" width="40" height="32" rx="4" stroke="currentColor" stroke-width="2.5"/>
+                <line x1="4" y1="16" x2="44" y2="16" stroke="currentColor" stroke-width="2.5"/>
+                <circle cx="10" cy="12" r="1.5" fill="#ff2244"/>
+                <circle cx="16" cy="12" r="1.5" fill="currentColor" fill-opacity="0.5"/>
+                <circle cx="22" cy="12" r="1.5" fill="currentColor" fill-opacity="0.3"/>
+                <polyline points="14,26 20,32 14,38" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <line x1="24" y1="35" x2="36" y2="35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="card__body">
+              <span class="card__tag">React · Next.js · CMS</span>
+              <h3 class="card__title">Website Development</h3>
+              <p class="card__desc">
+                High-performance, SEO-optimised websites and web apps. From landing pages and portfolios to complex e-commerce and SaaS platforms.
+              </p>
+            </div>
+            <ul class="card__features" aria-label="Key features">
+              <li>Responsive &amp; Accessible Design</li>
+              <li>SEO &amp; Core Web Vitals Optimised</li>
+              <li>CMS Integration (Headless / WP)</li>
+            </ul>
+          </article>
+
+          <article class="card" aria-label="IT Solutions and Service">
+            <div class="card__icon-wrap" aria-hidden="true">
+              <svg class="card__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2.5"/>
+                <path d="M24 4v6M24 38v6M4 24h6M38 24h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M9.37 9.37l4.24 4.24M34.39 34.39l4.24 4.24M9.37 38.63l4.24-4.24M34.39 13.61l4.24-4.24" stroke="#ff2244" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="card__body">
+              <span class="card__tag">Solutions · Support · Service</span>
+              <h3 class="card__title">IT Solutions &amp; Service</h3>
+              <p class="card__desc">
+                Comprehensive IT strategies, solutions, infrastructure, and ongoing support. We keep your systems running at peak performance.
+              </p>
+            </div>
+            <ul class="card__features" aria-label="Key features">
+              <li>Cloud Architecture</li>
+              <li>CI/CD &amp; Automation</li>
+              <li>Technical Support</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════ ABOUT ═══════════════════════════════ -->
+    <section class="about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Who We Are</span>
+          <h2 class="section-title" id="about-heading">The <span class="accent">jr.CorTechX</span> Story</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__visual" aria-hidden="true">
+            <div class="about__img-wrap">
+              <img src="logo.png" alt="jr.CorTechX Logo" class="about__logo" />
+              <div class="about__badge">
+                <span class="about__badge-num">100%</span>
+                <span class="about__badge-label">Committed</span>
+              </div>
+            </div>
+            <div class="about__stats">
+              <div class="stat">
+                <span class="stat__num">∞</span>
+                <span class="stat__label">Passion</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num">0→1</span>
+                <span class="stat__label">Products Built</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num">Global</span>
+                <span class="stat__label">Reach</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__content">
+            <div class="about__pillar">
+              <div class="about__pillar-icon" aria-hidden="true">🏠→🌍</div>
+              <div>
+                <h3 class="about__pillar-title">Garage to Global</h3>
+                <p class="about__pillar-text">
+                  jr.CorTechX was born in the spirit of the world's greatest tech stories — a small team with a massive vision. We started lean, scrappy, and focused, proving that world-class technology doesn't require a world-class budget to get started. From a humble garage-scale operation, we're building solutions that reach global audiences.
+                </p>
+              </div>
+            </div>
+
+            <div class="about__pillar">
+              <div class="about__pillar-icon" aria-hidden="true">🎮🧑‍💼</div>
+              <div>
+                <h3 class="about__pillar-title">Player-Coach Philosophy</h3>
+                <p class="about__pillar-text">
+                  Our team doesn't just manage projects — we build them. Every lead at jr.CorTechX is a practitioner first: writing code, pushing commits, and solving real problems right alongside you. This "Player-Coach" model means you get senior-level expertise at every layer, not just in review meetings.
+                </p>
+              </div>
+            </div>
+
+            <div class="about__pillar">
+              <div class="about__pillar-icon" aria-hidden="true">🧠⚡</div>
+              <div>
+                <h3 class="about__pillar-title">Cortex-Driven Innovation</h3>
+                <p class="about__pillar-text">
+                  Our name embodies our mission: <strong>Cortex Intelligence</strong> — the seat of creativity and reasoning — applied to <strong>Core Technology</strong>. We fuse deep technical expertise with strategic thinking to deliver products that aren't just functional, but genuinely intelligent and future-ready.
+                </p>
+              </div>
+            </div>
+
+            <a href="mailto:jr.cortechx@gmail.com" class="btn btn--primary about__cta">
+              Start a Conversation
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <a href="#home" class="nav__logo" aria-label="jr.CorTechX Home">
+            <img src="logo.png" alt="" class="nav__logo-img" width="40" height="40" aria-hidden="true" />
+            <span class="nav__logo-text">jr.<span class="accent">CorTechX</span></span>
+          </a>
+          <p class="footer__tagline">Cortex Intelligence at the Core Technology</p>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer navigation">
+          <h4 class="footer__heading">Navigate</h4>
+          <ul role="list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer__contact">
+          <h4 class="footer__heading">Contact</h4>
+          <ul role="list">
+            <li>
+              <a href="mailto:jr.cortechx@gmail.com" aria-label="Email jr.CorTechX">
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.5"/></svg>
+                jr.cortechx@gmail.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+917397532318" aria-label="Call jr.CorTechX">
+                <svg viewBox="0 0 24 24" fill="none" width="16" height="16" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16l.5.92z" stroke="currentColor" stroke-width="1.5"/></svg>
+                +91 73975 32318
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="year"></span> <strong>jr.CorTechX</strong>. All rights reserved.</p>
+        <p class="footer__credit">Built with ❤️ &amp; ☕ — from garage to global.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
