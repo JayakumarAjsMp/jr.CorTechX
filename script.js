@@ -97,11 +97,11 @@ function initScrollHeader() {
 function initScrollReveal() {
   // Mark elements for reveal
   const singleTargets = document.querySelectorAll(
-    '.section-header, .about__pillar, .about__visual, .about__content > .btn, .footer__inner > *'
+    '.section-header, .about__pillar, .about__visual, .about__content > .btn, .footer__inner > *, .process__step, .contact__channel, .contact__form, .portfolio__note'
   );
   singleTargets.forEach(el => el.setAttribute('data-reveal', ''));
 
-  const groupTargets = document.querySelectorAll('.services__grid, .about__stats');
+  const groupTargets = document.querySelectorAll('.services__grid, .about__stats, .portfolio__grid, .process__steps');
   groupTargets.forEach(el => el.setAttribute('data-reveal-group', ''));
 
   const allReveal = document.querySelectorAll('[data-reveal], [data-reveal-group]');
@@ -157,7 +157,35 @@ function initActiveNav() {
   sections.forEach(section => observer.observe(section));
 }
 
-/* ─── 6. Smooth Scroll Polyfill (for older Safari) ─────────────── */
+/* ─── 6. Contact Form ───────────────────────────────────────────── */
+(function initContactForm() {
+  const form   = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+  if (!form || !status) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name    = form.querySelector('#cf-name').value.trim();
+    const email   = form.querySelector('#cf-email').value.trim();
+    const service = form.querySelector('#cf-service').value;
+    const message = form.querySelector('#cf-message').value.trim();
+
+    if (!name || !email || !service || !message) {
+      status.textContent = 'Please fill in all fields.';
+      status.className = 'form__note form__note--error';
+      return;
+    }
+
+    const body = `Name: ${name}%0AEmail: ${email}%0AService: ${service}%0A%0A${encodeURIComponent(message)}`;
+    window.location.href = `mailto:jr.cortechx@gmail.com?subject=Project%20Enquiry%20from%20${encodeURIComponent(name)}&body=${body}`;
+    status.textContent = 'Opening your email client… We’ll reply within 24 hours!';
+    status.className = 'form__note form__note--success';
+    form.reset();
+  });
+})();
+
+/* ─── 7. Smooth Scroll Polyfill (for older Safari) ─────────────── */
 (function smoothScrollPolyfill() {
   if ('scrollBehavior' in document.documentElement.style) return; // native support
 
