@@ -97,11 +97,11 @@ function initScrollHeader() {
 function initScrollReveal() {
   // Mark elements for reveal
   const singleTargets = document.querySelectorAll(
-    '.section-header, .about__pillar, .about__visual, .about__content > .btn, .footer__inner > *, .process__step, .contact__channel, .contact__form, .portfolio__note'
+    '.section-header, .about__pillar, .about__visual, .about__content > .btn, .footer__inner > *, .process__step, .contact__channel, .contact__form, .portfolio__note, .tcard'
   );
   singleTargets.forEach(el => el.setAttribute('data-reveal', ''));
 
-  const groupTargets = document.querySelectorAll('.services__grid, .about__stats, .portfolio__grid, .process__steps');
+  const groupTargets = document.querySelectorAll('.services__grid, .about__stats, .portfolio__grid, .process__steps, .testi__grid');
   groupTargets.forEach(el => el.setAttribute('data-reveal-group', ''));
 
   const allReveal = document.querySelectorAll('[data-reveal], [data-reveal-group]');
