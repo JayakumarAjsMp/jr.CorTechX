@@ -1517,6 +1517,13 @@ section {
   .contact__channel:hover { transform: translateY(-4px) translateX(0); }
 }
 
+.form__optional {
+  font-weight: 400;
+  color: var(--clr-text-muted);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
 /* ─── 15. Testimonials ──────────────────────────────────────────── */
 .testimonials {
   background: var(--clr-bg);
@@ -1654,7 +1661,207 @@ section {
   .wa-float__label { display: none; }
 }
 
-/* ─── 16. Large Screen (TV) Enhancements ──────────────────────── */
+/* ─── 17. Pricing ──────────────────────────────────────────────── */
+.pricing {
+  background: var(--clr-surface);
+  position: relative;
+}
+
+.pricing::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(200,205,214,0.15), transparent);
+}
+
+.pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.75rem);
+  align-items: start;
+}
+
+.pricing__card {
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  transition: transform var(--dur-mid) var(--ease-smooth),
+              border-color var(--dur-mid), box-shadow var(--dur-mid);
+}
+
+.pricing__card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255,34,68,0.2);
+  box-shadow: var(--shadow-card);
+}
+
+.pricing__card--featured {
+  background: var(--clr-surface);
+  border-color: rgba(255,34,68,0.35);
+  box-shadow: 0 0 40px rgba(255,34,68,0.08);
+  transform: translateY(-8px);
+}
+
+.pricing__card--featured:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 0 60px rgba(255,34,68,0.14);
+}
+
+.pricing__badge {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-red);
+  color: #fff;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3em 1.2em;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  white-space: nowrap;
+}
+
+.pricing__header { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.pricing__tier {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: var(--fs-xs);
+  color: var(--clr-red);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.pricing__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  line-height: 1;
+}
+
+.pricing__currency {
+  font-size: var(--fs-md);
+  color: var(--clr-silver-dim);
+  font-weight: 600;
+}
+
+.pricing__amount {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  color: var(--clr-white);
+  letter-spacing: -0.03em;
+}
+
+.pricing__period {
+  font-size: var(--fs-md);
+  color: var(--clr-text-muted);
+  font-weight: 400;
+}
+
+.pricing__desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+}
+
+.pricing__features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+  border-top: 1px solid var(--clr-border);
+  padding-top: 1.25rem;
+}
+
+.pricing__features li {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  padding-left: 1.4rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.pricing__features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--clr-red);
+  font-weight: 700;
+  font-size: 0.8em;
+  top: 0.15em;
+}
+
+.pricing__features em {
+  font-style: normal;
+  color: var(--clr-silver-dim);
+  font-size: 0.9em;
+}
+
+.pricing__cta { width: 100%; justify-content: center; }
+
+.pricing__note {
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  font-style: italic;
+  margin-top: 2.5rem;
+}
+
+.pricing__note a {
+  font-style: normal;
+  font-weight: 600;
+  transition: opacity var(--dur-fast);
+}
+.pricing__note a:hover { opacity: 0.75; }
+
+@media (max-width: 900px) {
+  .pricing__grid { grid-template-columns: 1fr; }
+  .pricing__card--featured { transform: none; }
+  .pricing__card--featured:hover { transform: translateY(-6px); }
+}
+
+/* ─── 18. Footer Social Links ───────────────────────────────────── */
+.footer__social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-full);
+  padding: 0.35em 0.9em;
+  transition: color var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
+}
+
+.footer__social-link:hover {
+  color: var(--clr-white);
+  border-color: rgba(10,102,194,0.5);
+  background: rgba(10,102,194,0.1);
+}
+
+.footer__social-link--wa:hover {
+  border-color: rgba(37,211,102,0.4);
+  background: rgba(37,211,102,0.08);
+  color: #25d366;
+}
+
+/* ─── 19. Large Screen (TV) Enhancements ──────────────────────── */
 @media (min-width: 1800px) {
   .container { width: min(85%, 1600px); }
   section { padding-block: 10rem; }

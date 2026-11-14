@@ -97,11 +97,11 @@ function initScrollHeader() {
 function initScrollReveal() {
   // Mark elements for reveal
   const singleTargets = document.querySelectorAll(
-    '.section-header, .about__pillar, .about__visual, .about__content > .btn, .footer__inner > *, .process__step, .contact__channel, .contact__form, .portfolio__note, .tcard'
+    '.section-header, .about__pillar, .about__visual, .about__content > .btn, .footer__inner > *, .process__step, .contact__channel, .contact__form, .portfolio__note, .tcard, .pricing__note'
   );
   singleTargets.forEach(el => el.setAttribute('data-reveal', ''));
 
-  const groupTargets = document.querySelectorAll('.services__grid, .about__stats, .portfolio__grid, .process__steps, .testi__grid');
+  const groupTargets = document.querySelectorAll('.services__grid, .about__stats, .portfolio__grid, .process__steps, .testi__grid, .pricing__grid');
   groupTargets.forEach(el => el.setAttribute('data-reveal-group', ''));
 
   const allReveal = document.querySelectorAll('[data-reveal], [data-reveal-group]');
@@ -157,13 +157,14 @@ function initActiveNav() {
   sections.forEach(section => observer.observe(section));
 }
 
-/* ─── 6. Contact Form ───────────────────────────────────────────── */
+/* ─── 6. Contact Form (Web3Forms) ─────────────────────────────────────── */
 (function initContactForm() {
   const form   = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
-  if (!form || !status) return;
+  const btn    = form ? form.querySelector('.form__submit') : null;
+  if (!form || !status || !btn) return;
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const name    = form.querySelector('#cf-name').value.trim();
@@ -172,16 +173,37 @@ function initActiveNav() {
     const message = form.querySelector('#cf-message').value.trim();
 
     if (!name || !email || !service || !message) {
-      status.textContent = 'Please fill in all fields.';
+      status.textContent = 'Please fill in all required fields.';
       status.className = 'form__note form__note--error';
       return;
     }
 
-    const body = `Name: ${name}%0AEmail: ${email}%0AService: ${service}%0A%0A${encodeURIComponent(message)}`;
-    window.location.href = `mailto:jr.cortechx@gmail.com?subject=Project%20Enquiry%20from%20${encodeURIComponent(name)}&body=${body}`;
-    status.textContent = 'Opening your email client… We’ll reply within 24 hours!';
-    status.className = 'form__note form__note--success';
-    form.reset();
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.textContent = '';
+    status.className = 'form__note';
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      const data = await res.json();
+      if (data.success) {
+        status.textContent = '✅ Message sent! We’ll reply within 24 hours.';
+        status.className = 'form__note form__note--success';
+        form.reset();
+      } else {
+        throw new Error(data.message);
+      }
+    } catch {
+      status.textContent = '❌ Something went wrong. Please WhatsApp or email us directly.';
+      status.className = 'form__note form__note--error';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    }
   });
 })();
 
